@@ -1,0 +1,13 @@
+<div class="landing-page">
+<header >
+  <div class="container">
+    <a href="#" class="logo">E-<b>Commerce</b></a>
+    <ul class="links">
+      <li>Home</li>
+      <li>Products</li>
+      <li *ngIf="isAuth">Cart</li>
+      <li *ngIf="!isAuth">Log-in</li>
+    </ul>
+  </div>
+</header>
+</div>
