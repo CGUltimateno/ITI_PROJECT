@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  ngOnInit(): void {
+
+  }
+
 isAuth:boolean=false
 }

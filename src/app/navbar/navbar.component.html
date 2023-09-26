@@ -3,10 +3,18 @@
   <div class="container">
     <a href="#" class="logo">E-<b>Commerce</b></a>
     <ul class="links">
-      <li>Home</li>
-      <li>Products</li>
-      <li *ngIf="isAuth">Cart</li>
-      <li *ngIf="!isAuth">Log-in</li>
+      <li>
+        <a class="nav1" href="/home">Home</a>
+      </li>
+      <li>
+        <a class="nav2" href="/products">Products</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a class="nav3" href="/cart">Cart</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a class="nav3" href="/auth">Login</a>
+      </li>
     </ul>
   </div>
 </header>
