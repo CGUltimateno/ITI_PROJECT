@@ -9,7 +9,8 @@ export class ProdserviceService {
 
   constructor(private http:HttpClient) { }
   getAllProducts():Observable<any>{
-    return this.http.get<any>('http://localhost:3002/products');
+    let querydata=`pageNumber=1&pageSize=5`
+    return this.http.get<any>(`http://localhost:3002/products?${querydata}`);
   }
 
   getProductbyID(id:number):Observable<any> {

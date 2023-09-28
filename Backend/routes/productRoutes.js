@@ -45,7 +45,7 @@ router.delete("/:id", verfiyTokenAndAdmin, async (req, res) => {
 });
 
 /// Get one product
-router.get("/find/:id", async (req, res) => {
+router.get("/products/:id", async (req, res) => {
   try {
     const product = await productmodel.findById(req.params.id);
     res.status(200).json(product);
@@ -55,7 +55,7 @@ router.get("/find/:id", async (req, res) => {
 });
 
 // Get All products
-router.get("/", async (req, res) => {
+router.get("/products", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
   try {

@@ -84,12 +84,9 @@ ul {
   margin-left: auto;
   margin-right: auto;
 }
-.nav1 {
+.nav-link {
   color: black;
 }
-.nav2 {
-  color: black;
-}
-.nav3{
+.nav-link1{
   color: white;
 }
