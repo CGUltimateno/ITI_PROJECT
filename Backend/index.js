@@ -7,8 +7,13 @@ const productRoute = require("./routes/productRoutes");
 const orderRoute = require("./routes/orderRoutes");
 const cartRoute = require("./routes/cartRoutes");
 const authRoute = require("./routes/authRoutes");
+const cors = require("cors");
 
 dotenv.config();
+
+app.use(cors({
+    origin: 'http://localhost:4200',
+}));
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -18,16 +23,14 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
 app.use(express.json());
-
-app.use("/api/v1/users", userRoute);
-app.use("/api/v1/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/auth", authRoute);
 app.use("/products", productRoute);
-app.use("/api/v1/orders", orderRoute);
-app.use("/api/v1/carts", cartRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/carts", cartRoute);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4200;
 
 app.listen(port, () => {
   console.log(`server is running on ${port}`);

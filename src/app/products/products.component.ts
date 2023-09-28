@@ -9,15 +9,20 @@ import {ProdserviceService} from "../prodservice.service";
 export class ProductsComponent implements OnInit {
   allProducts: any[] = [];
 
-  constructor(public prodserviceService: ProdserviceService) {
-  }
-  ngOnInit(): void {
-    this.prodserviceService.getAllProducts().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.allProducts = data.products;
-      },
-    });
-  }
+  constructor(private prodserviceService: ProdserviceService) {}
+    ngOnInit() {
+        this.listProduct();
+    }
 
+    listProduct() {
+        this.prodserviceService.getAllProducts().subscribe(
+            (data) => {
+                this.allProducts = data;
+                console.log(data);
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    }
 }
