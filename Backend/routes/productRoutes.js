@@ -21,11 +21,11 @@ router.post("/", verfiyTokenAndAdmin, async (req, res) => {
 router.put("/:id", verfiyTokenAndAdmin, async (req, res) => {
   try {
     const updatedProduct = await productmodel.findByIdAndUpdate(
-      req.params.id,
-      {
-        $set: req.body,
-      },
-      { new: true }
+        req.params.id,
+        {
+          $set: req.body,
+        },
+        { new: true }
     );
     res.status(200).json(updatedProduct);
   } catch (err) {
@@ -45,7 +45,7 @@ router.delete("/:id", verfiyTokenAndAdmin, async (req, res) => {
 });
 
 /// Get one product
-router.get("/products/:id", async (req, res) => {
+router.get("/find/:id", async (req, res) => {
   try {
     const product = await productmodel.findById(req.params.id);
     res.status(200).json(product);
@@ -55,7 +55,7 @@ router.get("/products/:id", async (req, res) => {
 });
 
 // Get All products
-router.get("/products", async (req, res) => {
+router.get("/", async (req, res, next) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
   try {

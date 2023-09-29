@@ -8,12 +8,18 @@ import { Observable } from 'rxjs';
 export class ProdserviceService {
   constructor(private http: HttpClient) { }
 
-  // API_URI = 'http://localhost:4000';
+   // API_URI = 'http://localhost:4000';
   getAllProducts(): Observable<any> {
-    return this.http.get(`http://localhost:4000/products/products`);
+    return this.http.get(`http://localhost:4000/api/products`);
   }
 
-  getProductbyID(id: number): Observable<any> {
-    return this.http.get<any>(`http://localhost:4200/products/${id}`);
+  searchAllProducts(productName: string): Observable<any> {
+    if (productName == '') {
+      return this.getAllProducts();
+    } else {
+      return this.http.get(
+        `http://localhost:4000/api/products?name=${productName}`
+      );
+    }
   }
 }
