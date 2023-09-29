@@ -8,9 +8,13 @@ import { HttpClientModule} from "@angular/common/http";
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+=======
+import {FormsModule} from "@angular/forms";
+>>>>>>> 07e94f4c25459db750b75be243c306a699c1cf6a
 
 @NgModule({
   declarations: [
@@ -22,12 +26,21 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent
   ],
+<<<<<<< HEAD
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
+=======
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
+>>>>>>> 07e94f4c25459db750b75be243c306a699c1cf6a
   providers: [],
   bootstrap: [AppComponent]
 })
