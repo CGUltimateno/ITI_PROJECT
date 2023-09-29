@@ -7,25 +7,29 @@ const {
 const router = require("express").Router();
 
 // Create Product
-router.post("/", verfiyTokenAndAdmin, async (req, res) => {
-  const newProduct = new productmodel(req.body);
-  try {
-    const savedProduct = await newProduct.save();
-    res.status(200).json(savedProduct);
-  } catch (err) {
-    res.status(500).json(err);
+router.post(
+  "/add",
+  // verfiyTokenAndAdmin,
+  async (req, res) => {
+    const newProduct = new productmodel(req.body);
+    try {
+      const savedProduct = await newProduct.save();
+      res.status(200).json(savedProduct);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
-});
+);
 
 /// Update
 router.put("/:id", verfiyTokenAndAdmin, async (req, res) => {
   try {
     const updatedProduct = await productmodel.findByIdAndUpdate(
-        req.params.id,
-        {
-          $set: req.body,
-        },
-        { new: true }
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
     );
     res.status(200).json(updatedProduct);
   } catch (err) {

@@ -1,25 +1,58 @@
 <div class="container">
   <h2>Add Product</h2>
-  <form (ngSubmit)="onSubmit(productForm)" #productForm="ngForm">
+  <form #addForm="ngForm" (ngSubmit)="add(addForm.value)">
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" [(ngModel)]="product.title" class="form-control" required>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        ngModel
+        class="form-control"
+        required
+      />
     </div>
     <div class="form-group">
       <label for="price">Price:</label>
-      <input type="number" id="price" name="price" ngModel class="form-control" required>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        ngModel
+        class="form-control"
+        required
+      />
     </div>
     <div class="form-group">
       <label for="description">Description:</label>
-      <textarea id="description" name="desc" [(ngModel)]="product.desc" class="form-control" required></textarea>
+      <textarea
+        id="description"
+        name="desc"
+        ngModel
+        class="form-control"
+        required
+      ></textarea>
     </div>
     <div class="form-group">
       <label for="image">Image URL:</label>
-      <input type="text" id="image" name="imageurl" [(ngModel)]="product.imageurl" class="form-control" required>
+      <input
+        type="text"
+        id="image"
+        name="imageurl"
+        ngModel
+        class="form-control"
+        required
+      />
     </div>
     <div class="form-group">
       <label for="category">Category:</label>
-      <select id="category" name="categories" [(ngModel)]="product.categories" class="form-control" required>
+      <select
+        id="category"
+        name="categories"
+        ngModel
+        class="form-control"
+        required
+      >
         <option value="Electronics">Electronics</option>
         <option value="Clothing">Clothing</option>
         <option value="Food">Food</option>
@@ -27,6 +60,6 @@
         <option value="Books">Books</option>
       </select>
     </div>
-    <button type="submit" routerLink="/products" class="btn btn-primary submit">Add Product</button>
+    <button type="submit" class="btn btn-primary submit">Add Product</button>
   </form>
 </div>
