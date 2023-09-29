@@ -1,24 +1,25 @@
+<script>
+  window.location.reload();
+</script>
 <div class="landing-page">
   <header>
-    <div class="container">
+    <div class="container" ng>
       <a routerLink="/home" class="logo">E-<b>Commerce</b></a>
       <ul class="links">
         <li class="nav-item">
           <a class="nav-link" routerLink="">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/products">Products</a>
+          <a class="nav-link" *ngIf="isAuth" routerLink="/products">Products</a>
         </li>
-        <li class="nav-item" *ngIf="isAuth">
+        <li *ngIf="isAuth" class="nav-item">
           <a class="nav-link" routerLink="/cart">Cart</a>
-          <script>
-            console.log("====================================");
-            console.log({ isAuth }, "mmmmmmmm");
-            console.log("====================================");
-          </script>
         </li>
-        <li class="nav-item" *ngIf="!isAuth">
+        <li *ngIf="!isAuth" class="nav-item">
           <a class="nav-link1" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="isAuth" class="nav-item">
+          <a class="nav-link1" routerLink="/login" (click)="logout()">logout</a>
         </li>
       </ul>
     </div>

@@ -41,4 +41,6 @@ import { AddproductComponent } from './addproduct/addproduct.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

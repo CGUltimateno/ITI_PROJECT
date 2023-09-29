@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
   public static isLoggedIn: boolean = false
+
+
+
+
 
 }
