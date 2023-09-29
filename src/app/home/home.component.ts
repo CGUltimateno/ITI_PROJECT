@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './../login.service';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-isAuth:boolean=false
+  isAuth:boolean=false
+  constructor() {
+    this.isAuth = LoginService.isLoggedIn
+  console.log('====================================');
+  console.log(this.isAuth, 'from nav');
+  console.log('====================================');}
+
+
+
+
 
 }

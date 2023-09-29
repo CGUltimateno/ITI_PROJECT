@@ -1,21 +1,26 @@
 <div class="landing-page">
-<header >
-  <div class="container">
-    <a routerLink="/home" class="logo">E-<b>Commerce</b></a>
-    <ul class="links">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/products">Products</a>
-      </li>
-      <li class="nav-item" *ngIf="isAuth">
-        <a class="nav-link" routerLink="/cart">Cart</a>
-      </li>
-      <li class="nav-item" *ngIf="!isAuth">
-        <a class="nav-link1" routerLink="/auth">Login</a>
-      </li>
-    </ul>
-  </div>
-</header>
+  <header>
+    <div class="container">
+      <a routerLink="/home" class="logo">E-<b>Commerce</b></a>
+      <ul class="links">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuth">
+          <a class="nav-link" routerLink="/cart">Cart</a>
+          <script>
+            console.log("====================================");
+            console.log({ isAuth }, "mmmmmmmm");
+            console.log("====================================");
+          </script>
+        </li>
+        <li class="nav-item" *ngIf="!isAuth">
+          <a class="nav-link1" routerLink="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 </div>
