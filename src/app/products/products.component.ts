@@ -11,18 +11,22 @@ export class ProductsComponent implements OnInit {
 
   constructor(private prodserviceService: ProdserviceService) {}
     ngOnInit() {
-        this.listProduct();
+        this.prodserviceService.getAllProducts().subscribe({next:(data)=>{
+             console.log(data);
+        this.allProducts = data.products;
+        }})
+        // this.listProduct();
     }
 
-    listProduct() {
-        this.prodserviceService.getAllProducts().subscribe(
-            (data) => {
-                this.allProducts = data;
-                console.log(data);
-            },
-            (err) => {
-                console.log(err);
-            }
-        );
-    }
+    // listProduct() {
+    //     this.prodserviceService.getAllProducts().subscribe(
+    //         (data) => {
+    //             this.allProducts = data;
+    //             console.log(data);
+    //         },
+    //         (err) => {
+    //             console.log(err);
+    //         }
+    //     );
+    // }
 }

@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 export class ProdserviceService {
   constructor(private http: HttpClient) { }
 
-  API_URI = 'http://localhost:4200';
+  // API_URI = 'http://localhost:4000';
   getAllProducts(): Observable<any> {
-    return this.http.get(`${this.API_URI}/products`);
+    return this.http.get(`http://localhost:4000/products/products`);
   }
 
   getProductbyID(id: number): Observable<any> {

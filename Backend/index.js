@@ -11,9 +11,7 @@ const cors = require("cors");
 
 dotenv.config();
 
-app.use(cors({
-    origin: 'http://localhost:4200',
-}));
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -30,7 +28,7 @@ app.use("/products", productRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/carts", cartRoute);
 
-const port = process.env.PORT || 4200;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log(`server is running on ${port}`);
