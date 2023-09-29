@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from './../login.service';
+import { Router } from '@angular/router';
+
 
 
 
@@ -8,13 +10,21 @@ import { LoginService } from './../login.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent  {
+export class NavbarComponent implements OnInit {
 
-  constructor() { }
-  isAuth: boolean = LoginService.isLoggedIn
+  constructor(private loginService:LoginService,private router: Router) { }
+  ngOnInit(): void {
 
+  }
+  isAuth = localStorage.getItem('logedin')
 
+  logout() {
+     localStorage.removeItem("email");
+    localStorage.removeItem("logedin");
+    location.reload();
+window.location.replace('/login');
 
+  }
 
 
 
