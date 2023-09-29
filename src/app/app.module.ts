@@ -8,10 +8,11 @@ import { HttpClientModule} from "@angular/common/http";
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 
 
@@ -23,14 +24,16 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ProductsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddproductComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
 
 

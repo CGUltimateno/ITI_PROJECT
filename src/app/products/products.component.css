@@ -316,3 +316,12 @@ body{
     position: relative
   }
 }
+
+.buttons{
+  margin-left: 550px;
+  text-align: right;
+}
+
+.btn-primary{
+  margin-right: 10px;
+}

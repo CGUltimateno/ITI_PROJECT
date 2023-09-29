@@ -13,13 +13,7 @@ export class ProdserviceService {
     return this.http.get(`http://localhost:4000/api/products`);
   }
 
-  searchAllProducts(productName: string): Observable<any> {
-    if (productName == '') {
-      return this.getAllProducts();
-    } else {
-      return this.http.get(
-        `http://localhost:4000/api/products?name=${productName}`
-      );
-    }
+  AddProduct(product: any): Observable<any> {
+    return this.http.post(`http://localhost:4000/api/products`, product);
   }
 }
