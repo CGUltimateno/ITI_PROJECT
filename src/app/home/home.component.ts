@@ -11,11 +11,6 @@ export class HomeComponent {
 
   constructor( private loginService: LoginService,private router: Router)
   {
-
-  console.log('====================================');
-  console.log(this.isAuth, 'from nav');
-    console.log('====================================');
-
     this.router.navigate(['/home']);
     this.reloadPage()
   }

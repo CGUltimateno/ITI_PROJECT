@@ -17,12 +17,15 @@ export class NavbarComponent implements OnInit {
 
   }
   isAuth = localStorage.getItem('logedin')
-
+  get userName(): string | null {
+    return this.loginService.getUserName();
+  }
   logout() {
      localStorage.removeItem("email");
     localStorage.removeItem("logedin");
+    localStorage.removeItem('username');
     location.reload();
-window.location.replace('/login');
+    window.location.replace('/login');
 
   }
 

@@ -5,10 +5,10 @@
   <header>
     <div class="container" ng>
       <a routerLink="/home" class="logo">E-<b>Commerce</b></a>
+      <a class="nav-link">Welcome {{ userName }}</a>
       <ul class="links">
         <li class="nav-item">
           <a class="nav-link" routerLink="">Home</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="isAuth" routerLink="/products">Products</a>
         </li>

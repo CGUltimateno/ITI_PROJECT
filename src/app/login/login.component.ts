@@ -15,14 +15,15 @@ export class LoginComponent  implements OnInit {
   }
 
 
-  login(data: { email: string, password: string }) {
+  login(data: { email: string, password: string, username:string }) {
 try {
     this.http.post(`http://localhost:4000/api/auth/login`, data).subscribe((res) => {
       console.log(res);
       localStorage.setItem('email', data.email);
       LoginService.isLoggedIn = true
       localStorage.setItem('logedin',JSON.stringify(  LoginService.isLoggedIn))
-location.reload();
+      this.loginService.setUserName(data.username)
+      location.reload();
 window.location.replace('/home');
 
       console.log('====================================');

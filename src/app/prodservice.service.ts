@@ -15,7 +15,7 @@ export class ProdserviceService {
 
   AddProduct(data: {title: string, desc: string, price: number, imageurl: string, categories: string}) {
     try {
-      this.http.post(`http://localhost:4000/api/products`, data).subscribe((res) => {
+      this.http.post(`http://localhost:4000/api/products/add`, data).subscribe((res) => {
         console.log(res);
         localStorage.setItem('title', data.title);
         localStorage.setItem('desc', data.desc);

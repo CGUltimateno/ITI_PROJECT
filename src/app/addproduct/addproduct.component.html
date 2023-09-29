@@ -7,19 +7,19 @@
     </div>
     <div class="form-group">
       <label for="price">Price:</label>
-      <input type="number" id="price" name="price" [(ngModel)]="product.price" class="form-control" required>
+      <input type="number" id="price" name="price" ngModel class="form-control" required>
     </div>
     <div class="form-group">
       <label for="description">Description:</label>
-      <textarea id="description" name="description" [(ngModel)]="product.desc" class="form-control" required></textarea>
+      <textarea id="description" name="desc" [(ngModel)]="product.desc" class="form-control" required></textarea>
     </div>
     <div class="form-group">
       <label for="image">Image URL:</label>
-      <input type="text" id="image" name="image" [(ngModel)]="product.imageurl" class="form-control" required>
+      <input type="text" id="image" name="imageurl" [(ngModel)]="product.imageurl" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="category">Category:</label>
-      <select id="category" name="category" [(ngModel)]="product.categories" class="form-control" required>
+      <select id="category" name="categories" [(ngModel)]="product.categories" class="form-control" required>
         <option value="Electronics">Electronics</option>
         <option value="Clothing">Clothing</option>
         <option value="Food">Food</option>
