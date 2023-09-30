@@ -41,9 +41,7 @@ export class ProductsComponent implements OnInit {
 
   }
   addToCart(product: any,) {
-    this.http.post(`http://localhost:4000/api/carts`, this.Id).subscribe((res) => {
-      console.log(res);
-     })
+
     this.CartService.addToCart(product);
     product.showSuccessMessage = true;
     setTimeout(() => {
