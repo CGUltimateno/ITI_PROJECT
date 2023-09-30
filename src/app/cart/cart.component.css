@@ -1,0 +1,20 @@
+/* Add styles for the "X" button */
+.cart-item-remove-button {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Change button color on hover */
+.cart-item-remove-button:hover {
+    background-color: darkred;
+}

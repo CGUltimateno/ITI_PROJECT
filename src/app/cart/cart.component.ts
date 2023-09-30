@@ -8,18 +8,25 @@ import {CartserviceService} from "../cartservice.service";
 })
 export class CartComponent {
   cartItems: any[] = [];
+  totalCartPrice: number = 0;
 constructor(private cartservice: CartserviceService) { }
 ngOnInit() {
   this.cartItems = this.cartservice.getCartItems();
+  this.calculateTotalPrice();
 
 }
-  removeFromCart(item: any) {
-    // Remove the item from the cartItems array
+  calculateTotalPrice() {
+    this.totalCartPrice = this.cartItems.reduce(
+        (total, item) => total + parseFloat(item.price), // Parse price as a float
+        0
+    );
+  }
+  removeItemFromCart(item: any) {
     const index = this.cartItems.indexOf(item);
     if (index !== -1) {
       this.cartItems.splice(index, 1);
+      this.calculateTotalPrice(); // Calculate the updated total price
     }
   }
-
 
 }

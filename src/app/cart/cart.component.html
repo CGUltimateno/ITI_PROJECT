@@ -15,14 +15,11 @@
                                 <p class="lead fw-normal mb-2">{{ item.title }}</p>
                                 <p><span class="text-muted">Size: </span>{{ item.size }} <span class="text-muted">Color: </span>{{ item.color }}</p>
                             </div>
-                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                <!-- Add quantity controls here -->
-                            </div>
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                 <h5 class="mb-0">{{ item.price | currency }}</h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <a href="#!" class="text-danger" (click)="removeFromCart(item)"><i class="fas fa-trash fa-lg"></i></a>
+                                <a href="#" class="cart-item-remove-button" (click)="removeItemFromCart(item); $event.preventDefault()">X</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +36,16 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="text-end">
+                                    <h5>Total Price: {{ totalCartPrice | currency }}</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
