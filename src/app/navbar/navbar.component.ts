@@ -9,9 +9,6 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
     username: any;
-    isAuth: boolean = false;
-
-    constructor(private loginService: LoginService, private router: Router) { }
 
   constructor(private loginService:LoginService,private router: Router) { }
   ngOnInit(): void {
@@ -19,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
   isAuth = localStorage.getItem('logedin')
   get userName(): string | null {
-    return this.loginService.getUserName();
+    return this.loginService.getUserName(this.username);
   }
   logout() {
      localStorage.removeItem("email");

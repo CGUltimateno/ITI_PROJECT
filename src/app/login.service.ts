@@ -9,10 +9,7 @@ import { Observable } from 'rxjs';
 export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
-<<<<<<< HEAD
-  public static isLoggedIn: boolean = false
 
-=======
   public static isLoggedIn: boolean = false;
   public userId: string = ''; // Initialize the user ID property
 
@@ -23,11 +20,13 @@ export class LoginService {
   setUserName(username: string) {
     localStorage.setItem('username', username);
   }
+  getUserName(username: string) {
+    return localStorage.getItem('username');
+  }
 
   setUserId(userId: string) {
     this.userId = userId;
   }
->>>>>>> c277b6f30e6d4508fd1b6ec1c200125da50149c1
 }
 
 

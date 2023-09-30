@@ -13,9 +13,6 @@ export class LoginComponent  implements OnInit {
   ngOnInit(): void {
 
   }
-
-
-<<<<<<< HEAD
   login(data: { email: string, password: string, username:string }) {
 try {
   this.http.post(`http://localhost:4000/api/auth/login`, data).subscribe((res) => {
@@ -29,23 +26,6 @@ try {
       location.reload();
     window.location.replace('/home');
 
-
-=======
-    login(data: { email: string, password: string, username: string }) {
-        try {
-            this.http.post(`http://localhost:4000/api/auth/login`, data).subscribe((res: any) => {
-                console.log(res);
->>>>>>> c277b6f30e6d4508fd1b6ec1c200125da50149c1
-
-                // Store the user's ID after a successful login
-                this.loginService.setUserId(res.id);
-
-                localStorage.setItem('email', data.email);
-                LoginService.isLoggedIn = true;
-                localStorage.setItem('logedin', JSON.stringify(LoginService.isLoggedIn));
-                this.loginService.setUserName(data.username);
-                location.reload();
-                window.location.replace('/home');
 
                 console.log('====================================');
                 console.log(LoginService.isLoggedIn, 'from login component');
