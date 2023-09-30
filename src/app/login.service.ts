@@ -12,6 +12,8 @@ export class LoginService {
   public static isLoggedIn: boolean = false
 
 
+  public userId: string = ''; // Initialize the user ID property
+
   // getUser(id: string): Observable<any> {
   //   return this.http.get(`http://localhost:4000/api/users/${id}`);
   // }
@@ -22,20 +24,22 @@ export class LoginService {
   setUserId(_id: string) {
     localStorage.setItem('userId', _id);
   }
-  getUserName(data: any): any {
-    if (localStorage.getItem("user")) {
-      return localStorage.getItem("user")
-    }
-  }
+
   getUserId(data:any):any {
     if (localStorage.getItem("userId")) {
       return localStorage.getItem("userId")
     };
 
   }
-
-
-
+  getUserName(username: string) {
+    return localStorage.getItem('username');
   }
+
+
+}
+
+
+
+
 
 

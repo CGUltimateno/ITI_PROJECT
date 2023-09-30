@@ -34,6 +34,9 @@ const _id=((this.user._id));
 
 
 
+                console.log('====================================');
+                console.log(LoginService.isLoggedIn, 'from login component');
+                console.log('====================================');
             });
         } catch (error) {
             console.log(error);

@@ -11,12 +11,16 @@ export class NavbarComponent implements OnInit {
 
 
 
+
   constructor(private loginService:LoginService,private router: Router) { }
   ngOnInit(): void {
 
   }
-  isAuth = localStorage.getItem('logedin')
+isAuth = localStorage.getItem('logedin')
 username=localStorage.getItem('username')
+  // get userName(): string | null {
+  //   return this.loginService.getUserName(username);
+  // }
   logout() {
      localStorage.removeItem("email");
     localStorage.removeItem("logedin");
