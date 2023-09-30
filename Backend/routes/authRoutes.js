@@ -2,6 +2,9 @@ const router = require("express").Router();
 const User = require("../models/userModel");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
+const LocalStorage = require("node-localstorage").LocalStorage;
+const localStorage = new LocalStorage("./scratch");
+const cookieParser = require("cookie-parser");
 
 router.post("/register", async (req, res) => {
   const newUser = new User({
@@ -35,6 +38,7 @@ router.post("/login", async (req, res) => {
       user.password,
       process.env.PASS_SEC
     );
+
     const OriginalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
     if (OriginalPassword !== req.body.password) {
       return res.status(401).json("wrong credentials !");

@@ -8,7 +8,8 @@ const orderRoute = require("./routes/orderRoutes");
 const cartRoute = require("./routes/cartRoutes");
 const authRoute = require("./routes/authRoutes");
 const cors = require("cors");
-
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 dotenv.config();
 app.use(cors());
 

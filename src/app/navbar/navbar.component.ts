@@ -8,23 +8,21 @@ import { Router } from '@angular/router';
     styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-    username: any;
-    isAuth: boolean = false;
 
-    constructor(private loginService: LoginService, private router: Router) { }
+
 
   constructor(private loginService:LoginService,private router: Router) { }
   ngOnInit(): void {
 
   }
   isAuth = localStorage.getItem('logedin')
-  get userName(): string | null {
-    return this.loginService.getUserName();
-  }
+username=localStorage.getItem('username')
   logout() {
      localStorage.removeItem("email");
     localStorage.removeItem("logedin");
     localStorage.removeItem('username');
+    localStorage.removeItem('user');
+    localStorage.removeItem('userId');
     location.reload();
     window.location.replace('/login');
 

@@ -3,6 +3,7 @@ import {ProdserviceService} from "../prodservice.service";
 import {Router} from "@angular/router";
 import {CartserviceService} from "../cartservice.service";
 import {LoginService} from "../login.service";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-products',
@@ -17,17 +18,12 @@ export class ProductsComponent implements OnInit {
       private prodserviceService: ProdserviceService,
       private router: Router,
       private CartService: CartserviceService,
-      private LoginService: LoginService) {}
-  ngOnInit() {
-    // Obtain the user ID from the LoginService
-    const userId = this.LoginService.userId;
+    private LoginService: LoginService,
+    private http: HttpClient,) { }
+  Id=localStorage.getItem('userId')
 
-    // Fetch user details and set isAdmin
-    this.prodserviceService.getUserDetails(userId).subscribe({
-      next: (data) => {
-        this.isAdmin = data.isAdmin;
-      }
-    });
+  ngOnInit() {
+
 
     // Fetch products
     this.prodserviceService.getAllProducts().subscribe({
@@ -38,8 +34,16 @@ export class ProductsComponent implements OnInit {
         }));
       }
     });
+
+
+
+
+
   }
-  addToCart(product: any) {
+  addToCart(product: any,) {
+    this.http.post(`http://localhost:4000/api/carts`, this.Id).subscribe((res) => {
+      console.log(res);
+     })
     this.CartService.addToCart(product);
     product.showSuccessMessage = true;
     setTimeout(() => {

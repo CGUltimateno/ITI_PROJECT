@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 
+
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
@@ -13,11 +14,11 @@ import { LoginService } from '../login.service';
 
 export class AddproductComponent {
   product: any = {};
-
   ngOnInit() {
 
   }
   constructor(private loginService: LoginService, private http: HttpClient, private router: Router) { }
+
   add(data: {
     title: string,
     desc: string,
@@ -25,9 +26,14 @@ export class AddproductComponent {
     categories: [],
     price: string,
     size: string,
-    color: string
+    color: string,
+
+
+
+
   }) {
     try {
+
       this.http.post(`http://localhost:4000/api/products/add`, data).subscribe((res) => {
         console.log(res);
 

@@ -1,0 +1,10 @@
+{
+  _id: new ObjectId("6517325a2605ef0afb923fa2"),
+  username: 'admin2',
+  email: 'admin2@gmail.com',
+  password: 'U2FsdGVkX18tdSnc8GTkRGAOQ0rFlBK/G8Ezb3l9N1w=',
+  isAdmin: false,
+  createdAt: 2023-09-29T20:23:54.866Z,
+  updatedAt: 2023-09-29T20:23:54.866Z,
+  __v: 0
+}

@@ -5,13 +5,18 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class ProdserviceService {
   constructor(private http: HttpClient) { }
-
+userId=localStorage.getItem('userId')
   // API_URI = 'http://localhost:4000';
 
   getAllProducts(): Observable<any> {
     return this.http.get(`http://localhost:4000/api/products`);
+  }
+  getCard(): Observable<any> {
+    return this.http.get(`http://localhost:4000/api/carts/find`);
   }
 
   // Add a method to fetch user details

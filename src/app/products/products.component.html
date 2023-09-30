@@ -1,9 +1,16 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
 <div class="container mt-5">
   <div class="bootstrap snippets bootdeys">
     <div class="col-md-6 buttons">
-      <button class="btn btn-primary" (click)="addProduct()" >Add Product</button>
-      <button class="btn btn-danger" (click)="deleteProduct()" >Delete Product</button>
+      <button class="btn btn-primary" (click)="addProduct()">
+        Add Product
+      </button>
+      <button class="btn btn-danger" (click)="deleteProduct()">
+        Delete Product
+      </button>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6" *ngFor="let product of allProducts">
@@ -11,40 +18,55 @@
           <div class="row">
             <div class="col-md-5 col-sm-12 col-xs-12">
               <div class="product-image">
-                <img src="{{product.imageurl}}" alt="194x228" class="img-responsive img-fluid">
+                <img
+                  src="{{ product.imageurl }}"
+                  alt="194x228"
+                  class="img-responsive img-fluid"
+                />
               </div>
             </div>
             <div class="col-md-7 col-sm-12 col-xs-12">
               <div class="product-deatil">
                 <h5 class="name">
                   <a href="#">
-                    {{product.title}} <span>{{product.categories}}</span>
-                    </a>
+                    {{ product.title }} <span>{{ product.categories }}</span>
+                  </a>
                   <a href="#">
-                    <span>{{product.size}}</span>
+                    <span>{{ product.size }}</span>
                   </a>
                 </h5>
                 <p class="price-container">
-                  <span>${{product.price}}</span>
+                  <span>${{ product.price }}</span>
                 </p>
                 <span class="tag1"></span>
               </div>
               <div class="description">
-                <p>{{product.desc}} </p>
-                <a><span>Color: {{product.color}}</span>
+                <p>{{ product.desc }}</p>
+                <a
+                  ><span>Color: {{ product.color }}</span>
                 </a>
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div  class="col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="addToCart(product)" class="btn btn-success">Add to cart</a>
-                    <div *ngIf="product.showSuccessMessage" class="alert alert-success mt-2">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="addToCart(product)" class="btn btn-success"
+                      >Add to cart</a
+                    >
+                    <div
+                      *ngIf="product.showSuccessMessage"
+                      class="alert alert-success mt-2"
+                    >
                       Added to Cart
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
-                      <ngb-rating [(rate)]="product.starrating" [max]="5" class="star-rating" [readonly]="true"></ngb-rating>
+                      <ngb-rating
+                        [(rate)]="product.starrating"
+                        [max]="5"
+                        class="star-rating"
+                        [readonly]="true"
+                      ></ngb-rating>
                     </div>
                   </div>
                 </div>

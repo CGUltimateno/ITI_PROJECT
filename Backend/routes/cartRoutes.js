@@ -8,15 +8,19 @@ const {
 const router = require("express").Router();
 
 // Create
-router.post("/", verfiyToken, async (req, res) => {
-  const newCart = new cartModel(req.body);
-  try {
-    const savedCart = await newCart.save();
-    res.status(200).json(savedCart);
-  } catch (err) {
-    res.status(500).json(err);
+router.post(
+  "/",
+  // verfiyToken,
+  async (req, res) => {
+    const newCart = new cartModel(req.body);
+    try {
+      const savedCart = await newCart.save();
+      res.status(200).json(savedCart);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
-});
+);
 
 /// Update
 router.put("/:id", verfiyTokenAndAuthorization, async (req, res) => {
@@ -46,16 +50,20 @@ router.delete("/:id", verfiyTokenAndAuthorization, async (req, res) => {
 });
 
 /// Get user cart
-router.get("/find/:userId", verfiyTokenAndAuthorization, async (req, res) => {
-  try {
-    const cart = await cartModel.findOne({
-      userId: req.params.userId,
-    });
-    res.status(200).json(cart);
-  } catch (err) {
-    res.status(500).json(err);
+router.get(
+  "/find/:userId",
+  // verfiyTokenAndAuthorization,
+  async (req, res) => {
+    try {
+      const cart = await cartModel.findOne({
+        userId: req.params.userId,
+      });
+      res.status(200).json(cart);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
-});
+);
 
 /// get all carts by admin
 

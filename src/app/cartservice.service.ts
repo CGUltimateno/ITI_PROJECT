@@ -8,6 +8,11 @@ export class CartserviceService {
 
   addToCart(product: any) {
     this.cartItems.push(product);
+    this.cartItems[this.cartItems.length] = localStorage.getItem('userId');
+    // this.cartItems.push(localStorage.getItem('userId'));
+    console.log('====================================');
+    console.log(this.cartItems);
+    console.log('====================================');
   }
 
   getCartItems() {
