@@ -10,17 +10,11 @@ export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
   public static isLoggedIn: boolean = false
-  private userName: string | null = null;
-
-  setUserName(name: string) {
-    this.userName = name;
-  }
-
-  getUserName(): string | null {
-    return this.userName;
-  }
-
-
-
 
 }
+
+
+
+
+
+

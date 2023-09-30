@@ -11,20 +11,24 @@ import { LoginService } from './../login.service';
 export class LoginComponent  implements OnInit {
   constructor(private loginService:LoginService,private http:HttpClient,private router: Router) { }
   ngOnInit(): void {
-    // this.fresh()
+
   }
 
 
   login(data: { email: string, password: string, username:string }) {
 try {
-    this.http.post(`http://localhost:4000/api/auth/login`, data).subscribe((res) => {
+  this.http.post(`http://localhost:4000/api/auth/login`, data).subscribe((res) => {
       console.log(res);
+
+
+
       localStorage.setItem('email', data.email);
       LoginService.isLoggedIn = true
       localStorage.setItem('logedin',JSON.stringify(  LoginService.isLoggedIn))
-      this.loginService.setUserName(data.username)
       location.reload();
-window.location.replace('/home');
+    window.location.replace('/home');
+
+
 
       console.log('====================================');
       console.log(LoginService.isLoggedIn,'from login component');
