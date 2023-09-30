@@ -1,0 +1,17 @@
+<div class="container-wrapper">
+  <button class="back-button" (click)="goBack()">
+    <i class="fa fa-arrow-left"></i> Back
+  </button>
+  <div class="content">
+    <div class="header">
+      <h2 class="page-title">Delete Product</h2>
+    </div>
+    <div class="form-group">
+      <label for="product" class="label">Select a Product to Delete:</label>
+      <select id="product" name="product" [(ngModel)]="selectedProductId" class="form-control select-box">
+        <option *ngFor="let product of products" [value]="product._id">{{ product.title }}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-danger delete-button" (click)="deleteProduct()">Delete Product</button>
+  </div>
+</div>

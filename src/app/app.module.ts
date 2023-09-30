@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -27,7 +28,8 @@ import { DeleteproductComponent } from './deleteproduct/deleteproduct.component'
     LoginComponent,
     RegisterComponent,
     AddproductComponent,
-    DeleteproductComponent
+    DeleteproductComponent,
+    CartComponent
   ],
 
   imports: [

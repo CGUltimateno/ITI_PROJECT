@@ -19,6 +19,9 @@
                 <h5 class="name">
                   <a href="#">
                     {{product.title}} <span>{{product.categories}}</span>
+                    </a>
+                  <a href="#">
+                    <span>{{product.size}}</span>
                   </a>
                 </h5>
                 <p class="price-container">
@@ -28,11 +31,13 @@
               </div>
               <div class="description">
                 <p>{{product.desc}} </p>
+                <a><span>Color: {{product.color}}</span>
+                </a>
               </div>
               <div class="product-info smart-form">
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-6">
-                    <a href="javascript:void(0);" class="btn btn-success">Add to cart</a>
+                    <a (click)="addToCart(product)" class="btn btn-success">Add to cart</a>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
