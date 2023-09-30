@@ -8,8 +8,8 @@
           Choose Your Products , add them to cart , Pay with Debit Card Fast And
           Easy !
         </p>
-        <button *ngIf="!isAuth">Log-in</button>
-        <button *ngIf="isAuth">See Products</button>
+        <button routerLink="/login" *ngIf="!isAuth">Log-in</button>
+        <button routerLink="/products" *ngIf="isAuth">See Products</button>
       </div>
       <div class="image">
         <img src="./assets/image.png" />

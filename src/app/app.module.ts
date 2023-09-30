@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -25,7 +27,9 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     ProductsComponent,
     LoginComponent,
     RegisterComponent,
-    AddproductComponent
+    AddproductComponent,
+    DeleteproductComponent,
+    CartComponent
   ],
 
   imports: [
