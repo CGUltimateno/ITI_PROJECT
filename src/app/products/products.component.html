@@ -2,8 +2,8 @@
 <div class="container mt-5">
   <div class="bootstrap snippets bootdeys">
     <div class="col-md-6 buttons">
-      <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
-      <button class="btn btn-danger" (click)="deleteProduct()">Delete Product</button>
+      <button class="btn btn-primary" (click)="addProduct()" >Add Product</button>
+      <button class="btn btn-danger" (click)="deleteProduct()" >Delete Product</button>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6" *ngFor="let product of allProducts">
@@ -36,8 +36,11 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div  class="col-md-6 col-sm-6 col-xs-6">
                     <a (click)="addToCart(product)" class="btn btn-success">Add to cart</a>
+                    <div *ngIf="product.showSuccessMessage" class="alert alert-success mt-2">
+                      Added to Cart
+                    </div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">

@@ -25,5 +25,9 @@ export class CartserviceService {
     }
   }
 
+    clearCart() {
+    this.cartItems = [];
+    }
+
   constructor() { }
 }

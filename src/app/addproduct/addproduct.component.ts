@@ -18,7 +18,15 @@ export class AddproductComponent {
 
   }
   constructor(private loginService: LoginService, private http: HttpClient, private router: Router) { }
-  add(data: { title: string, desc: string, imageurl: string, categories: [], price: string, size: string, color: string }) {
+  add(data: {
+    title: string,
+    desc: string,
+    imageurl: string,
+    categories: [],
+    price: string,
+    size: string,
+    color: string
+  }) {
     try {
       this.http.post(`http://localhost:4000/api/products/add`, data).subscribe((res) => {
         console.log(res);
