@@ -21,6 +21,6 @@ export class ProductsComponent implements OnInit {
 
   }
   deleteProduct() {
-
+    this.router.navigate(['/deleteproduct']);
   }
 }

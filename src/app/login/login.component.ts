@@ -26,31 +26,12 @@ try {
       location.reload();
 window.location.replace('/home');
 
-      console.log('====================================');
-      console.log(LoginService.isLoggedIn,'from login component');
-      console.log('====================================');
-
-      // this.router.navigate(['/home']);
-
-
-
-
-})
-
-    console.log('====================================');
-    console.log(data);
-  console.log('====================================');
-
-    }catch (error) {
-  console.log(error);
-
-
-}
-
-
-  }
-
-
-
-
+                console.log('====================================');
+                console.log(LoginService.isLoggedIn, 'from login component');
+                console.log('====================================');
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }

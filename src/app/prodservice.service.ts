@@ -13,18 +13,4 @@ export class ProdserviceService {
     return this.http.get(`http://localhost:4000/api/products`);
   }
 
-  // AddProduct(data: {title: string, desc: string, price: number, imageurl: string, categories: string}) {
-  //   try {
-  //     this.http.post(`http://localhost:4000/api/products/add`, data).subscribe((res) => {
-  //       console.log(res);
-  //       localStorage.setItem('title', data.title);
-  //       localStorage.setItem('desc', data.desc);
-  //       localStorage.setItem('price', data.price.toString());
-  //       localStorage.setItem('imageurl', data.imageurl);
-  //       localStorage.setItem('categories', data.categories);
-  //     })
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 }

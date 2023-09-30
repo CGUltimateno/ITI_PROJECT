@@ -5,7 +5,7 @@
   <header>
     <div class="container" ng>
       <a routerLink="/home" class="logo">E-<b>Commerce</b></a>
-      <a class="nav-link">Welcome {{ userName }}</a>
+      <a *ngIf="isAuth" class="nav-link">Welcome {{ username || 'User' }}</a>
       <ul class="links">
         <li class="nav-item">
           <a class="nav-link" routerLink="">Home</a>

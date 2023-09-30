@@ -7,8 +7,7 @@ const {
 const router = require("express").Router();
 
 // Create Product
-router.post(
-  "/add",
+router.post("/add",
   // verfiyTokenAndAdmin,
   async (req, res) => {
     const newProduct = new productmodel(req.body);
@@ -39,7 +38,7 @@ router.put("/:id", verfiyTokenAndAdmin, async (req, res) => {
 
 // DELETE
 
-router.delete("/:id", verfiyTokenAndAdmin, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     await productmodel.findByIdAndDelete(req.params.id);
     res.status(200).json("Product has been deleted");

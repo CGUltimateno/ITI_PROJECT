@@ -1,8 +1,8 @@
+<div class="container-wrapper">
 <div class="center">
   <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
     <p class="title">Sign in</p>
 
-    <!-- Email input -->
     <div class="form-outline mb-4">
       <input
         type="email"
@@ -41,24 +41,17 @@
           <label class="form-check-label" for="form2Example31">
             Remember me
           </label>
-          <!-- <input type="submit" value="login" /> -->
         </div>
-      </div>
-
-      <div class="col">
-        <!-- Simple link -->
-        <a href="#!">Forgot password?</a>
       </div>
     </div>
 
-    <!-- Submit button -->
     <button type="submit" value="login" class="btn btn-primary btn-block mb-4">
       Sign in
     </button>
 
-    <!-- Register buttons -->
     <div class="text-center">
       <p>Not a member? <a routerLink="/register">Sign up</a></p>
     </div>
   </form>
+</div>
 </div>

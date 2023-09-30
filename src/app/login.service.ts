@@ -10,17 +10,13 @@ export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
   public static isLoggedIn: boolean = false
-  private userName: string | null = null;
 
-  setUserName(name: string) {
-    this.userName = name;
+  getUser(id: string): Observable<any> {
+    return this.http.get(`http://localhost:4000/api/users/${id}`);
   }
 
-  getUserName(): string | null {
-    return this.userName;
+  setUserName(username: string) {
+    localStorage.setItem('username', username);
   }
-
-
-
 
 }

@@ -23,19 +23,10 @@ export class AddproductComponent {
       this.http.post(`http://localhost:4000/api/products/add`, data).subscribe((res) => {
         console.log(res);
 
-
         location.reload();
         window.location.replace('/products');
 
-
-
-
-
-
-
-
       })
-
       console.log('====================================');
       console.log(data);
       console.log('====================================');
