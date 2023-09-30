@@ -5,10 +5,17 @@
   <header>
     <div class="container" ng>
       <a routerLink="/home" class="logo">E-<b>Commerce</b></a>
+<<<<<<< HEAD
+      <a class="nav-link">Welcome </a>
+
+=======
       <a *ngIf="isAuth" class="nav-link">Welcome {{ username || 'User' }}</a>
+>>>>>>> c277b6f30e6d4508fd1b6ec1c200125da50149c1
       <ul class="links">
         <li class="nav-item">
           <a class="nav-link" routerLink="">Home</a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" *ngIf="isAuth" routerLink="/products">Products</a>
         </li>
@@ -19,7 +26,9 @@
           <a class="nav-link1" routerLink="/login">Login</a>
         </li>
         <li *ngIf="isAuth" class="nav-item">
-          <a class="nav-link1" routerLink="/login" (click)="logout()">Sign out</a>
+          <a class="nav-link1" routerLink="/login" (click)="logout()"
+            >Sign out</a
+          >
         </li>
       </ul>
     </div>

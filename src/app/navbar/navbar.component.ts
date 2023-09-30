@@ -13,39 +13,23 @@ export class NavbarComponent implements OnInit {
 
     constructor(private loginService: LoginService, private router: Router) { }
 
-    ngOnInit(): void {
-        const loggedInValue = localStorage.getItem('logedin');
+  constructor(private loginService:LoginService,private router: Router) { }
+  ngOnInit(): void {
 
-        if (loggedInValue !== null) {
-            this.isAuth = JSON.parse(loggedInValue);
-        } else {
-            this.isAuth = false;
-        }
+  }
+  isAuth = localStorage.getItem('logedin')
+  get userName(): string | null {
+    return this.loginService.getUserName();
+  }
+  logout() {
+     localStorage.removeItem("email");
+    localStorage.removeItem("logedin");
+    localStorage.removeItem('username');
+    location.reload();
+    window.location.replace('/login');
 
-        if (this.isAuth) {
-            const userId = localStorage.getItem('userId'); // Retrieve MongoDB ID
-            console.log('User ID:', userId);
+  }
 
-            if (userId) {
-                this.loginService.getUser(userId).subscribe(
-                    (user) => {
-                        console.log('Username:', user.username);
-                        this.username = user.username;
-                    },
-                    (error) => {
-                        console.error('Error getting username:', error);
-                    }
-                );
-            }
-        }
-    }
 
-    logout() {
-        localStorage.removeItem("email");
-        localStorage.removeItem("logedin");
-        localStorage.removeItem('username');
-        localStorage.removeItem('userId'); // Remove the MongoDB ID
-        location.reload();
-        window.location.replace('/login');
-    }
+
 }
